@@ -40,8 +40,15 @@ export async function updateCategoria(idCategoria, nombre) {
       ? resultSets[0] ?? resultSets
       : resultSets;
 
-    const resultado =
-      Array.isArray(first) && first[0] && Number(Object.values[0][0]) === 1;
+    const resultado = false;
+
+    if (
+      Array.isArray(first) &&
+      first[0] &&
+      Number(Object.values(first[0])[0]) === 1
+    ) {
+      resultado = true;
+    }
 
     return resultado;
   } catch (err) {
@@ -64,7 +71,7 @@ export async function deleteCategoria(idCategoria) {
     const resultado =
       Array.isArray(first) &&
       first[0] &&
-      Number(Object.values(first[0][0])) === 1;
+      Number(Object.values(first[0])[0]) === 1;
     return resultado;
   } catch (err) {
     console.log("Ocurrio un error al eliminar la categoria", err);
