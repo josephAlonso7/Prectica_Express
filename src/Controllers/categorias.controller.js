@@ -3,7 +3,7 @@ import {
   createCategoria,
   updateCategoria,
   deleteCategoria,
-} from "../models/categorias.model";
+} from "../models/categorias.model.js";
 
 //Get api/categorias
 export const listarCategorias = async (req, res) => {
